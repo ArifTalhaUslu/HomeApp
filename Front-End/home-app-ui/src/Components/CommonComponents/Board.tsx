@@ -12,14 +12,19 @@ interface BoardProps {
   isDeletable?: (item: any) => boolean;
   hiddenColumns?: string[];
   renderColumn?: (column: string, value: any) => JSX.Element | string;
+  hasNewRecordButton?: boolean;
+  newRecordButtonOnClick?: () => void;
 }
 
-function Board({ hasDataTable = true, items, onEdit, onDelete, isEditable, isDeletable, hiddenColumns, renderColumn }: BoardProps) {
+function Board({ hasDataTable = true, items, onEdit, onDelete, isEditable, isDeletable, hiddenColumns, renderColumn, hasNewRecordButton, newRecordButtonOnClick }: BoardProps) {
   const renderedItems = items ?? [];
 
   return (
     <>
-      <TopContents />
+      <TopContents
+        hasNewRecordButton={hasNewRecordButton}
+        newRecordButtonOnClick={newRecordButtonOnClick}
+      />
       {hasDataTable ? (
         <DataTable
           items={renderedItems}

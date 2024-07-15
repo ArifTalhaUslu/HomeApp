@@ -1,7 +1,7 @@
 function Contents() {
   return (
     <>
-      asdasd
+      Content component tekil veri gösterimi sayfalari icin daha sonra yazilacak
     </>
   );
 }
